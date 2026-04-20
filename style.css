@@ -57,6 +57,14 @@ body {
     overflow-y: auto;
 }
 
+#home-page {
+    background-image: url('images/logo.png');
+    background-size: 200px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+}
+
 .page.active {
     transform: translateX(0);
 }
