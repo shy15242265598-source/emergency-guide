@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>应急智导 - AI应急科普小程序</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 手机容器 -->
+    <div class="phone-container">
+        <!-- 顶部状态栏 -->
+        <div class="status-bar">
+            <div class="status-left">9:41</div>
+            <div class="status-right">
+                <span>信号</span>
+                <span>Wi-Fi</span>
+                <span>电池</span>
+            </div>
+        </div>
+        
+        <!-- 页面内容区域 -->
+        <div class="page-content">
+            <!-- 首页 -->
+            <div id="home-page" class="page active">
+                <!-- 头部标题 -->
+                <div class="header">
+                    <h1>应急智导</h1>
+                </div>
+                
+                <!-- 轮播图 -->
+                <div class="carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-item active">
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=emergency%20safety%20education%20poster%20with%20blue%20background&image_size=landscape_16_9" alt="应急安全教育">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fire%20safety%20training%20with%20blue%20background&image_size=landscape_16_9" alt="消防安全培训">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=first%20aid%20training%20with%20blue%20background&image_size=landscape_16_9" alt="急救培训">
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                
+                <!-- 功能按钮 -->
+                <div class="function-buttons">
+                    <div class="button-item" onclick="switchPage('game-page')">
+                        <div class="button-icon">
+                            <img src="images/元力闯关.png" alt="元力闯关">
+                        </div>
+                        <div class="button-text">元力闯关</div>
+                    </div>
+                    <div class="button-item" onclick="switchPage('vr-page')">
+                        <div class="button-icon">
+                            <img src="images/VR实训营.png" alt="VR实训营">
+                        </div>
+                        <div class="button-text">VR实训营</div>
+                    </div>
+                    <div class="button-item" onclick="switchPage('ai-page')">
+                        <div class="button-icon">
+                            <img src="images/AI安全顾问.png" alt="AI安全顾问">
+                        </div>
+                        <div class="button-text">AI安全顾问</div>
+                    </div>
+                    <div class="button-item" onclick="switchPage('video-page')">
+                        <div class="button-icon">
+                            <img src="images/短视频库.png" alt="短视频库">
+                        </div>
+                        <div class="button-text">短视频库</div>
+                    </div>
+                </div>
+                
+                <!-- 安全知识 -->
+                <div class="safety-knowledge">
+                    <h2>安全知识</h2>
+                    <div class="knowledge-items">
+                        <div class="knowledge-item" onclick="showToast('火灾逃生技巧')">
+                            <div class="knowledge-thumbnail">
+                                <img src="images/火灾逃生技巧.png" alt="火灾逃生技巧">
+                            </div>
+                            <div class="knowledge-content">
+                                <h3>火灾逃生技巧</h3>
+                                <p>掌握正确的火灾逃生方法，保障生命安全</p>
+                            </div>
+                        </div>
+                        <div class="knowledge-item" onclick="showToast('地震防护措施')">
+                            <div class="knowledge-thumbnail">
+                                <img src="images/地震防护措施.png" alt="地震防护措施">
+                            </div>
+                            <div class="knowledge-content">
+                                <h3>地震防护措施</h3>
+                                <p>了解地震发生时的应急防护措施</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- VR实训页 -->
+            <div id="vr-page" class="page">
+                <div class="header">
+                    <h1>VR实训</h1>
+                </div>
+                <div class="vr-content">
+                    <div class="vr-item" onclick="showToast('火灾模拟')">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=VR%20fire%20simulation%20training&image_size=portrait_4_3" alt="火灾模拟">
+                        <h3>火灾模拟</h3>
+                        <p>沉浸式体验火灾场景，学习逃生技巧</p>
+                    </div>
+                    <div class="vr-item" onclick="showToast('地震模拟')">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=VR%20earthquake%20simulation%20training&image_size=portrait_4_3" alt="地震模拟">
+                        <h3>地震模拟</h3>
+                        <p>体验地震发生时的应对措施</p>
+                    </div>
+                    <div class="vr-item" onclick="showToast('急救训练')">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=VR%20first%20aid%20training&image_size=portrait_4_3" alt="急救训练">
+                        <h3>急救训练</h3>
+                        <p>学习基本急救技能，提高应急处理能力</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 我的页面 -->
+            <div id="mine-page" class="page">
+                <div class="header">
+                    <h1>我的</h1>
+                </div>
+                <div class="mine-content">
+                    <div class="user-info">
+                        <div class="avatar">
+                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=user%20avatar%20icon&image_size=square" alt="用户头像">
+                        </div>
+                        <div class="user-details">
+                            <h3>用户名</h3>
+                            <p>应急安全志愿者</p>
+                        </div>
+                    </div>
+                    <div class="mine-menu">
+                        <div class="menu-item" onclick="showToast('学习记录')">
+                            <span class="menu-icon">📚</span>
+                            <span class="menu-text">学习记录</span>
+                        </div>
+                        <div class="menu-item" onclick="showToast('证书管理')">
+                            <span class="menu-icon">🏆</span>
+                            <span class="menu-text">证书管理</span>
+                        </div>
+                        <div class="menu-item" onclick="showToast('设置')">
+                            <span class="menu-icon">⚙️</span>
+                            <span class="menu-text">设置</span>
+                        </div>
+                        <div class="menu-item" onclick="showToast('关于我们')">
+                            <span class="menu-icon">ℹ️</span>
+                            <span class="menu-text">关于我们</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 元力闯关页面 -->
+            <div id="game-page" class="page">
+                <div class="header">
+                    <div class="header-left" onclick="switchPage('home-page')">
+                        <span class="back-icon">←</span>
+                    </div>
+                    <h1>元力闯关</h1>
+                    <div class="header-right"></div>
+                </div>
+                <div class="game-content">
+                    <div class="game-levels">
+                        <div class="level-item" onclick="startLevel('earthquake')">
+                            <div class="level-thumbnail">
+                                <img src="images/地震安全.png" alt="地震安全">
+                            </div>
+                            <div class="level-info">
+                                <h3>地震安全</h3>
+                                <p>3道题目</p>
+                            </div>
+                            <div class="level-arrow">→</div>
+                        </div>
+                        <div class="level-item" onclick="startLevel('fire')">
+                            <div class="level-thumbnail">
+                                <img src="images/火灾安全.png" alt="火灾安全">
+                            </div>
+                            <div class="level-info">
+                                <h3>火灾安全</h3>
+                                <p>4道题目</p>
+                            </div>
+                            <div class="level-arrow">→</div>
+                        </div>
+                        <div class="level-item" onclick="startLevel('aed')">
+                            <div class="level-thumbnail">
+                                <img src="images/AED使用.png" alt="AED使用">
+                            </div>
+                            <div class="level-info">
+                                <h3>AED使用</h3>
+                                <p>5道题目</p>
+                            </div>
+                            <div class="level-arrow">→</div>
+                        </div>
+                        <div class="level-item" onclick="startLevel('cpr')">
+                            <div class="level-thumbnail">
+                                <img src="images/心肺复苏.png" alt="心肺复苏">
+                            </div>
+                            <div class="level-info">
+                                <h3>心肺复苏</h3>
+                                <p>4道题目</p>
+                            </div>
+                            <div class="level-arrow">→</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 题目页面 -->
+            <div id="quiz-page" class="page">
+                <div class="header">
+                    <div class="header-left" onclick="switchPage('game-page')">
+                        <span class="back-icon">←</span>
+                    </div>
+                    <h1>答题挑战</h1>
+                    <div class="header-right"></div>
+                </div>
+                <div class="quiz-content">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="progress-text">1/3</div>
+                    </div>
+                    <div class="quiz-question">
+                        <h2>问题：地震发生时，下列哪种做法是正确的？</h2>
+                        <div class="quiz-options">
+                            <div class="option-item" onclick="selectOption(0)">
+                                <span class="option-radio"></span>
+                                <span class="option-text">立即跳楼逃生</span>
+                            </div>
+                            <div class="option-item" onclick="selectOption(1)">
+                                <span class="option-radio"></span>
+                                <span class="option-text">躲在桌子底下</span>
+                            </div>
+                            <div class="option-item" onclick="selectOption(2)">
+                                <span class="option-radio"></span>
+                                <span class="option-text">乘电梯下楼</span>
+                            </div>
+                            <div class="option-item" onclick="selectOption(3)">
+                                <span class="option-radio"></span>
+                                <span class="option-text">站在窗户边</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-feedback" style="display: none;">
+                        <div class="feedback-icon correct">✓</div>
+                        <div class="feedback-text">回答正确！</div>
+                        <div class="feedback-explanation">正确做法是躲在桌子等坚固家具底下，保护头部免受伤害。</div>
+                        <button class="next-button" onclick="nextQuestion()">下一题</button>
+                    </div>
+                    <div class="quiz-complete" style="display: none;">
+                        <div class="complete-icon">🎉</div>
+                        <h2>恭喜通关！</h2>
+                        <p>你已经掌握了相关急救知识</p>
+                        <button class="complete-button" onclick="switchPage('game-page')">返回关卡</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI安全顾问页面 -->
+            <div id="ai-page" class="page">
+                <div class="header">
+                    <div class="header-left" onclick="switchPage('home-page')">
+                        <span class="back-icon">←</span>
+                    </div>
+                    <h1>AI安全顾问</h1>
+                    <div class="header-right" onclick="clearChat()">
+                        <span class="clear-icon">清空</span>
+                    </div>
+                </div>
+                <div class="ai-content">
+                    <div class="chat-container">
+                        <div class="chat-message ai-message">
+                            <div class="message-avatar">
+                                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=AI%20assistant%20avatar%20icon&image_size=square" alt="AI">
+                            </div>
+                            <div class="message-content">
+                                <p>你好！我是AI安全顾问，有什么急救问题可以问我。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="ai-input" placeholder="请输入你的问题...">
+                        <button onclick="sendMessage()">发送</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 短视频库页面 -->
+            <div id="video-page" class="page">
+                <div class="header">
+                    <div class="header-left" onclick="switchPage('home-page')">
+                        <span class="back-icon">←</span>
+                    </div>
+                    <h1>短视频库</h1>
+                    <div class="header-right"></div>
+                </div>
+                <div class="video-content">
+                    <div class="video-item">
+                        <div class="video-thumbnail" onclick="playVideo(0)">
+                            <img src="images/AED使用指南.png" alt="AED使用">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <h3>AED使用指南</h3>
+                        <p>学习如何正确使用自动体外除颤器</p>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail" onclick="playVideo(1)">
+                            <img src="images/海姆立克急救法.png" alt="海姆立克法">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <h3>海姆立克急救法</h3>
+                        <p>应对呼吸道异物阻塞的紧急处理</p>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail" onclick="playVideo(2)">
+                            <img src="images/心肺复苏术.png" alt="心肺复苏">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <h3>心肺复苏术</h3>
+                        <p>掌握基本的心肺复苏技能</p>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-thumbnail" onclick="playVideo(3)">
+                            <img src="images/创伤处理.png" alt="创伤处理">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <h3>创伤处理</h3>
+                        <p>常见创伤的应急处理方法</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 视频播放页面 -->
+            <div id="video-player-page" class="page">
+                <div class="header">
+                    <div class="header-left" onclick="switchPage('video-page')">
+                        <span class="back-icon">←</span>
+                    </div>
+                    <h1>视频播放</h1>
+                    <div class="header-right"></div>
+                </div>
+                <div class="video-player-content">
+                    <div class="video-player">
+                        <video id="video-player" controls width="100%" height="auto">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h2 id="video-title">视频标题</h2>
+                        <p id="video-description">视频描述</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部导航栏 -->
+        <div class="bottom-nav">
+            <div class="nav-item active" onclick="switchPage('home-page')">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">首页</span>
+            </div>
+            <div class="nav-item" onclick="switchPage('vr-page')">
+                <span class="nav-icon">🥽</span>
+                <span class="nav-text">VR实训</span>
+            </div>
+            <div class="nav-item" onclick="switchPage('mine-page')">
+                <span class="nav-icon">👤</span>
+                <span class="nav-text">我的</span>
+            </div>
+        </div>
+        
+        <!-- 提示框 -->
+        <div id="toast" class="toast">
+            <div class="toast-content"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
