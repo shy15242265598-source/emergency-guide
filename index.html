@@ -35,14 +35,14 @@
                 <!-- 轮播图 -->
                 <div class="carousel">
                     <div class="carousel-container">
-                        <div class="carousel-item active">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=emergency%20safety%20education%20poster%20with%20blue%20background&image_size=landscape_16_9" alt="应急安全教育">
+                        <div class="carousel-item active" onclick="switchPage('game-page')">
+                            <img src="./images/元力闯关.png" alt="元力闯关" style="cursor: pointer;">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fire%20safety%20training%20with%20blue%20background&image_size=landscape_16_9" alt="消防安全培训">
+                        <div class="carousel-item" onclick="showAISafetyConsultant()">
+                            <img src="./images/AI安全顾问.png" alt="AI安全顾问" style="cursor: pointer;">
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=first%20aid%20training%20with%20blue%20background&image_size=landscape_16_9" alt="急救培训">
+                        <div class="carousel-item" onclick="switchPage('video-page')">
+                            <img src="./images/短视频库.png" alt="短视频库" style="cursor: pointer;">
                         </div>
                     </div>
                     <div class="carousel-indicators">
