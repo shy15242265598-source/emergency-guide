@@ -456,3 +456,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// 显示急救视频模态框
+function showFirstAidVideo() {
+    document.getElementById('first-aid-modal').style.display = 'block';
+}
+
+// 关闭急救视频模态框
+function closeFirstAidVideo() {
+    document.getElementById('first-aid-modal').style.display = 'none';
+    // 暂停视频播放
+    const video = document.getElementById('first-aid-video');
+    if (video) {
+        video.pause();
+    }
+}
+
+// 切换急救视频
+function changeFirstAidVideo(videoUrl) {
+    const video = document.getElementById('first-aid-video');
+    const source = video.querySelector('source');
+    source.src = videoUrl;
+    video.load();
+    video.play();
+}
