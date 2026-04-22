@@ -122,31 +122,25 @@
                         <h3>地震模拟</h3>
                         <p>体验地震发生时的应对措施</p>
                     </div>
-                    <div class="vr-item" onclick="showFirstAidVideo()">
+                    <div class="vr-item" onclick="showVRFirstAidVideo()">
                         <img src="./images/心肺复苏术.png" alt="急救训练">
                         <h3>急救训练</h3>
                         <p>学习基本急救技能，提高应急处理能力</p>
                     </div>
                     
-                    <!-- 急救视频播放模态框 -->
-                    <div id="first-aid-modal" class="modal">
+                    <!-- VR急救训练视频播放模态框 -->
+                    <div id="vr-first-aid-modal" class="modal">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3>急救训练视频</h3>
-                                <span class="close-modal" onclick="closeFirstAidVideo()">&times;</span>
+                                <h3>VR急救训练视频</h3>
+                                <span class="close-modal" onclick="closeVRFirstAidVideo()">&times;</span>
                             </div>
                             <div class="modal-body">
                                 <div class="video-container">
-                                    <video id="first-aid-video" controls width="100%" height="auto">
-                                        <source src="./videos/cpr.mp4" type="video/mp4">
+                                    <video id="vr-first-aid-video" controls width="100%" height="auto">
+                                        <source src="./videos/vr-first-aid.mp4" type="video/mp4">
                                         您的浏览器不支持视频播放
                                     </video>
-                                </div>
-                                <div class="video-selector">
-                                    <button onclick="changeFirstAidVideo('./videos/cpr.mp4')">心肺复苏</button>
-                                    <button onclick="changeFirstAidVideo('./videos/aed-usage.mp4')">AED使用</button>
-                                    <button onclick="changeFirstAidVideo('./videos/heimlich.mp4')">海姆立克急救法</button>
-                                    <button onclick="changeFirstAidVideo('./videos/wound-treatment.mp4')">创伤处理</button>
                                 </div>
                             </div>
                         </div>
