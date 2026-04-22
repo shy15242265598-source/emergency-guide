@@ -128,23 +128,6 @@
                         <p>学习基本急救技能，提高应急处理能力</p>
                     </div>
                     
-                    <!-- VR急救训练视频播放模态框 -->
-                    <div id="vr-first-aid-modal" class="modal">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3>VR急救训练视频</h3>
-                                <span class="close-modal" onclick="closeVRFirstAidVideo()">&times;</span>
-                            </div>
-                            <div class="modal-body">
-                                <div class="video-container">
-                                    <video id="vr-first-aid-video" controls width="100%" height="auto">
-                                        <source src="./videos/vr-first-aid.mp4" type="video/mp4">
-                                        您的浏览器不支持视频播放
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             
@@ -525,6 +508,24 @@
         <!-- 提示框 -->
         <div id="toast" class="toast">
             <div class="toast-content"></div>
+        </div>
+        
+        <!-- VR急救训练视频播放模态框 -->
+        <div id="vr-first-aid-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>VR急救训练视频</h3>
+                    <span class="close-modal" onclick="closeVRFirstAidVideo()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <video id="vr-first-aid-video" controls width="100%" height="auto">
+                            <source src="./videos/vr-first-aid.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
