@@ -112,17 +112,17 @@
                     <h1>VR实训</h1>
                 </div>
                 <div class="vr-content">
-                    <div class="vr-item" onclick="showToast('火灾模拟')">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=VR%20fire%20simulation%20training&image_size=portrait_4_3" alt="火灾模拟">
+                    <div class="vr-item" onclick="switchPage('vr-fire-page')">
+                        <img src="./images/火灾安全.png" alt="火灾模拟">
                         <h3>火灾模拟</h3>
                         <p>沉浸式体验火灾场景，学习逃生技巧</p>
                     </div>
-                    <div class="vr-item" onclick="showToast('地震模拟')">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=VR%20earthquake%20simulation%20training&image_size=portrait_4_3" alt="地震模拟">
+                    <div class="vr-item" onclick="switchPage('vr-earthquake-page')">
+                        <img src="./images/地震安全.png" alt="地震模拟">
                         <h3>地震模拟</h3>
                         <p>体验地震发生时的应对措施</p>
                     </div>
-                    <div class="vr-item" onclick="showVRFirstAidVideo()">
+                    <div class="vr-item" onclick="switchPage('vr-first-aid-page')">
                         <img src="./images/心肺复苏术.png" alt="急救训练">
                         <h3>急救训练</h3>
                         <p>学习基本急救技能，提高应急处理能力</p>
@@ -144,6 +144,123 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- VR火灾模拟页面 -->
+            <div id="vr-fire-page" class="page">
+                <div class="header">
+                    <div class="header-left" onclick="switchPage('vr-page')">
+                        <span class="back-icon">←</span>
+                    </div>
+                    <h1>火灾模拟</h1>
+                    <div class="header-right"></div>
+                </div>
+                <div class="vr-simulation-content">
+                    <div class="simulation-image">
+                        <img src="./images/火灾安全.png" alt="火灾模拟">
+                    </div>
+                    <div class="simulation-description">
+                        <h3>火灾模拟训练</h3>
+                        <p>通过VR技术，沉浸式体验火灾场景，学习正确的火灾逃生技巧和应对措施。</p>
+                        <div class="simulation-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🔥</span>
+                                <span>真实火灾场景模拟</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🚪</span>
+                                <span>正确逃生路线指引</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🧯</span>
+                                <span>灭火器使用培训</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">👥</span>
+                                <span>团队协作逃生演练</span>
+                            </div>
+                        </div>
+                        <button class="start-simulation-btn" onclick="startFireSimulation()">开始模拟</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- VR地震模拟页面 -->
+            <div id="vr-earthquake-page" class="page">
+                <div class="header">
+                    <div class="header-left" onclick="switchPage('vr-page')">
+                        <span class="back-icon">←</span>
+                    </div>
+                    <h1>地震模拟</h1>
+                    <div class="header-right"></div>
+                </div>
+                <div class="vr-simulation-content">
+                    <div class="simulation-image">
+                        <img src="./images/地震安全.png" alt="地震模拟">
+                    </div>
+                    <div class="simulation-description">
+                        <h3>地震模拟训练</h3>
+                        <p>通过VR技术，体验地震发生时的真实场景，学习正确的地震应对措施和逃生技巧。</p>
+                        <div class="simulation-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🌍</span>
+                                <span>真实地震场景模拟</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🛋️</span>
+                                <span>正确避震位置指导</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📱</span>
+                                <span>地震应急通讯技巧</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🚶</span>
+                                <span>安全疏散路线演练</span>
+                            </div>
+                        </div>
+                        <button class="start-simulation-btn" onclick="startEarthquakeSimulation()">开始模拟</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- VR急救训练页面 -->
+            <div id="vr-first-aid-page" class="page">
+                <div class="header">
+                    <div class="header-left" onclick="switchPage('vr-page')">
+                        <span class="back-icon">←</span>
+                    </div>
+                    <h1>急救训练</h1>
+                    <div class="header-right"></div>
+                </div>
+                <div class="vr-simulation-content">
+                    <div class="simulation-image">
+                        <img src="./images/心肺复苏术.png" alt="急救训练">
+                    </div>
+                    <div class="simulation-description">
+                        <h3>急救技能训练</h3>
+                        <p>通过VR技术，学习基本急救技能，提高应急处理能力，在关键时刻挽救生命。</p>
+                        <div class="simulation-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">❤️</span>
+                                <span>心肺复苏术训练</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⚡</span>
+                                <span>AED使用培训</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🤧</span>
+                                <span>海姆立克急救法</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🩹</span>
+                                <span>创伤处理技巧</span>
+                            </div>
+                        </div>
+                        <button class="start-simulation-btn" onclick="showVRFirstAidVideo()">观看视频教程</button>
                     </div>
                 </div>
             </div>

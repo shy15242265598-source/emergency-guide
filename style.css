@@ -139,6 +139,80 @@ body {
     background-color: #FF6B60;
 }
 
+/* VR模拟页面样式 */
+.vr-simulation-content {
+    padding: 20px;
+}
+
+.simulation-image {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.simulation-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.simulation-description {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.simulation-description h3 {
+    color: #FF3B30;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.simulation-description p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.simulation-features {
+    margin-bottom: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.feature-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    width: 24px;
+    text-align: center;
+}
+
+.start-simulation-btn {
+    background-color: #FF3B30;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.start-simulation-btn:hover {
+    background-color: #FF6B60;
+}
+
 #home-page {
     position: relative;
     min-height: 100vh;

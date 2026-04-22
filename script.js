@@ -471,3 +471,13 @@ function closeVRFirstAidVideo() {
         video.pause();
     }
 }
+
+// 开始火灾模拟
+function startFireSimulation() {
+    showToast('火灾模拟功能即将开放，敬请期待！');
+}
+
+// 开始地震模拟
+function startEarthquakeSimulation() {
+    showToast('地震模拟功能即将开放，敬请期待！');
+}
